@@ -37,3 +37,50 @@ Successfully implements all quadrants.
 ## Submission
 1. Commit and push your code to this repository
 2. Take a screenshot of your work and upload it to the Google Classroom assignment post.
+
+
+
+import processing.core.PApplet;
+
+public class Sketch extends PApplet {
+	
+  public void settings() {
+	// put your size call here
+    size(900, 900);
+  }
+
+  public void setup() {
+    background(210, 255, 173);
+  }
+
+  public void draw() {
+	  
+    background(255, 255, 255);
+
+    for (int circleY = 75; circleY <= 375; circleY += 75) {
+      for (int circleX = 500; circleX <= 800; circleX += 75) {
+        stroke(0);
+        fill(204, 35, 122);
+        ellipse(circleX, circleY, 25, 25);
+      }
+    }
+
+    for (int i = 1; i <= 8; i++) {
+      int lineY = i * 50;
+      stroke(0);
+      line(lineY, 0, lineY, 400);
+    }
+
+    for (int j = 1; j <= 8; j++) {
+      int lineX = j * 50;
+      stroke(0);
+      line(0, lineX, 400, lineX);
+    }
+    
+    
+    for (int x = 0; x <= 450; x++) {
+      stroke(x * 256 / 450);
+      line(x * 1, 450, x + 1, 900);
+    }
+  }
+}
